@@ -1,52 +1,241 @@
-body {
-  font-family: "Inter", sans-serif;
-  background: #f4f6f8;
-  color: #333;
+/* ===== RESET ===== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+body {
+  background: #f5f7fb;
+  color: #1e293b;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== CONTAINER ===== */
 .container {
-  max-width: 900px;
-  margin: auto;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 2rem;
 }
 
-header {
+/* ===== HERO / HEADER ===== */
+.hero {
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  animation: fadeIn 1s ease;
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
+  border: 4px solid white;
   margin-bottom: 1rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s;
+}
+
+.avatar:hover {
+  transform: scale(1.07);
+}
+
+.name {
+  color: #e0f2fe;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 1rem auto;
+  max-width: 700px;
+  font-size: 1.1rem;
+  color: #f0f9ff;
+}
+
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.github {
+  background: white;
+  color: #0f172a;
+}
+
+.linkedin {
+  background: #2563eb;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== ABOUT ===== */
+.about {
+  margin-top: 3rem;
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.8s ease;
+}
+
+.about h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+/* ===== PROJECTS ===== */
+.projects {
+  margin-top: 3rem;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #0f172a;
 }
 
 .repo-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
 }
 
 .repo-card {
   background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s ease;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent;
 }
 
 .repo-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  border-left: 5px solid #3b82f6;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+.repo-card h3 {
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.repo-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.repo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repo-footer span {
+  background: #eff6ff;
+  color: #1e3a8a;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.repo-footer a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.repo-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CONTRIBUTIONS ===== */
+.contrib-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.contrib-list li {
+  margin-bottom: 0.8rem;
+}
+
+.contrib-list a {
+  text-decoration: none;
+  color: #0369a1;
+  font-weight: 600;
+}
+
+.contrib-list a:hover {
+  color: #0ea5e9;
+}
+
+/* ===== LOADING ===== */
+.loading {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 1.2rem;
+  color: #475569;
+}
+
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  padding: 2rem 0;
+  color: #475569;
   font-size: 0.9rem;
-  color: #666;
+}
+
+footer b {
+  color: #2563eb;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .repo-list {
+    grid-template-columns: 1fr;
+  }
 }
